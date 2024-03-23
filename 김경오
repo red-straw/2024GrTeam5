@@ -1,4 +1,10 @@
-let rotationAngle = map(sin(frameCount * 0.05), -1, 1, -PI / 4, PI / 4); // 커비 팔 흔들기 함수 
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  
+  let rotationAngle = map(sin(frameCount * 0.05), -1, 1, -PI / 4, PI / 4); // 커비 팔 흔들기 함수 
   background(220);
   
   push();
@@ -97,3 +103,4 @@ let rotationAngle = map(sin(frameCount * 0.05), -1, 1, -PI / 4, PI / 4); // 커�
   ellipse(250, 210, 30, 20);
   
   pop();
+}
