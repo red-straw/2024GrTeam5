@@ -1,1 +1,52 @@
-
+function setup() {
+  createCanvas(600, 600);
+  strokeWeight(7);
+}//2D도형: 원,타원.잘라진원, 사각형, 점 사용
+let m = 0;
+function draw(){
+  background(255);
+  translate(150,150); //왼귀좌표(150,150)
+  fill(68,62,62);//눈테두리, 귀 색
+  circle(0,0,100);//왼쪽귀
+  translate(300,0); //오귀좌표(450,150)
+  fill(68,62,62);//눈테두리, 귀 색
+  circle(0,0,100);//오른쪽귀
+  push();
+  translate(-350,-25);//얼굴좌표(100,125)
+  fill(255);
+  rect(0, 0, 400, 320, 250);
+  translate(110,115);//왼테두리좌표(210,240)
+  rotate(PI/5);
+  fill(68,62,62);//눈테두리, 귀 색
+  rect(0, 0, 90, 100, 100, 100, 40, 40); //왼눈 테두리
+  rotate(-PI/5);
+  translate(20,50);//왼큰눈좌표(230,290)
+  rotate(3*PI/4);
+  fill(0);
+  arc(0, 0, 40, 40, 75, PI +  PI / 2, CHORD)//왼쪽큰눈
+  rotate(-3* PI / 4);
+  translate(-20,-50);
+  translate(110,50);//오눈 테두리좌표(320,290)
+  rotate(-PI/5);
+  fill(68,62,62);//눈테두리, 귀 색
+  rect(0, 0, 90, 100, 100, 100, 40, 40);//오른눈 테두리
+  rotate(PI/5);
+  translate(50,0);//오큰눈좌표(370,290)
+  rotate(3*PI/4);
+  fill(0);
+  arc(0, 0, 40, 40, 75, PI +  PI / 2, CHORD)//오른큰눈
+  rotate(-3* PI / 4);
+  translate(-70,20);
+  circle(0, 0, 20); // 코(300,310)
+  stroke('white');
+  strokeWeight(15);
+  point(60, -30);//오른쪽 작은눈좌표(360,280);
+  point(-60, -30);//왼쪽 작은 눈좌표(240,280);
+  stroke('black');
+  strokeWeight(7);
+  rotate(-PI/2);
+  noFill();
+  scale(sin(m= m+0.01) + 2);
+  arc(0, 0, 60, 60, 3 * PI/ 4, 5* PI / 4);//입 좌표 코와 같음
+  pop();
+}
